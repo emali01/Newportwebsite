@@ -22,21 +22,6 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fadeIn { animation: fadeIn 0.35s ease-out; }
         img { image-rendering: auto; }
-        .decorative-card-btn {
-            background: white;
-            border: 1px solid #e4e4e7;
-            color: #18181b;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            letter-spacing: -0.01em;
-        }
-        .decorative-card-btn:hover {
-            background: #f4f4f5;
-            border-color: #d4d4d8;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-            transform: translateY(-1px);
-        }
         .product-card {
             transition: all 0.25s ease;
             background: white;
@@ -45,6 +30,17 @@
         .product-card:hover {
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
             border-color: #e2e8f0;
+        }
+        .decorative-card-btn {
+            background: #18181b;
+            color: white;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .decorative-card-btn:hover {
+            background: #27272a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -90,7 +86,7 @@
                 </a>
                 <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-zinc-700">
                     <a href="#home" class="hover:text-blue-700 transition-colors">Home</a>
-                    <a href="about.php" class="hover:text-blue-700 transition-colors">About</a>
+                    <a href="about.html" class="hover:text-blue-700 transition-colors">About</a>
                     <a href="#products" class="hover:text-blue-700 transition-colors">Products</a>
                     <a href="#industries" class="hover:text-blue-700 transition-colors">Industries</a>
                     <a href="#technical" class="hover:text-blue-700 transition-colors">Technical</a>
@@ -116,7 +112,7 @@
                 </div>
                 <div class="grid grid-cols-2 gap-2 text-[14px]">
                     <a href="#home" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">Home</a>
-                    <a href="#about" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">About</a>
+                    <a href="about.html" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">About</a>
                     <a href="#products" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">Products</a>
                     <a href="#industries" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">Industries</a>
                     <a href="#technical" class="mobile-nav-link rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50">Technical</a>
@@ -184,11 +180,11 @@
 
     <section id="products" class="mx-auto max-w-[1200px] px-4 py-20">
         <div class="flex items-end justify-between gap-4">
-            <div><h2 class="text-[28px] font-bold tracking-tight font-title">Product Portfolio</h2><p class="mt-2 text-[15px] text-zinc-600 max-w-xl">Engineered minerals and decorative finishes manufactured to international standards.</p></div>
+            <div><h2 class="text-[28px] font-bold tracking-tight font-title">PRODUCTS</h2><p class="mt-2 text-[15px] text-zinc-600 max-w-xl">Engineered minerals and decorative finishes manufactured to international standards.</p></div>
             <a href="#downloads" class="hidden sm:inline-flex items-center gap-1.5 text-[14px] font-medium text-blue-700 hover:underline">Download Catalog <i data-lucide="download" class="h-4 w-4"></i></a>
         </div>
         <div class="mt-12"><h3 class="text-[18px] font-semibold text-zinc-900">Mineral Products</h3><div id="mineral-products-grid" class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div></div>
-        <div class="mt-16"><h3 class="text-[18px] font-semibold text-zinc-900">Decorative Finishes</h3><div id="decorative-products-grid" class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div></div>
+        <div class="mt-16"><h3 class="text-[18px] font-semibold text-zinc-900">Decorative Finishes</h3><div id="decorative-products-grid" class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div></div>
     </section>
 
     <section id="industries" class="bg-zinc-900 text-white">
@@ -449,8 +445,9 @@
                 document.getElementById("mineral-products-grid").appendChild(el);
             });
             items.filter(p=>p.category==="Decorative").forEach(p=>{
+                const specHtml = p.specs.slice(0,2).map(s=>`<div class="rounded-xl bg-zinc-50 px-3 py-2"><div class="text-[11px] text-zinc-500">${s.label}</div><div class="font-semibold text-zinc-800 text-[13px]">${s.value}</div></div>`).join('');
                 const el=document.createElement("div");el.className="product-card group rounded-2xl border border-zinc-200 bg-white overflow-hidden";
-                el.innerHTML=`<div class="relative aspect-[4/3] overflow-hidden"><img src="${p.image}" alt="${p.name}" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"><span class="absolute left-4 top-4 rounded-full bg-orange-500/90 px-3 py-1 text-[11px] font-semibold uppercase text-white">Decorative</span></div><div class="p-5"><h4 class="text-[16px] font-semibold">${p.name}</h4><p class="mt-2 text-[13px] text-zinc-600 line-clamp-3">${p.short}</p><div class="mt-4 flex flex-wrap gap-2">${p.specs.slice(0,3).map(s=>`<span class="inline-flex rounded-full bg-zinc-100 px-3 py-1 text-[11px] font-medium text-zinc-600">${s.label}: ${s.value}</span>`).join('')}</div><button onclick="openProductModal('${p.id}')" class="mt-4 w-full h-11 decorative-card-btn rounded-full flex items-center justify-center gap-2 text-[13px]">View Details <i data-lucide="chevron-right" class="h-4 w-4"></i></button></div>`;
+                el.innerHTML=`<div class="relative aspect-[4/3] overflow-hidden bg-zinc-100"><img src="${p.image}" alt="${p.name}" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"><span class="absolute left-4 top-4 rounded-full bg-orange-500/90 px-3 py-1 text-[11px] font-semibold uppercase text-white backdrop-blur-sm">Decorative</span></div><div class="p-5"><h4 class="text-[16px] font-semibold">${p.name}</h4><p class="mt-2 text-[14px] text-zinc-600 line-clamp-2">${p.short}</p><div class="mt-4 grid grid-cols-2 gap-3">${specHtml}</div><div class="mt-5 flex items-center gap-3"><button onclick="openProductModal('${p.id}')" class="flex-1 h-10 rounded-full bg-zinc-900 text-white text-[13px] font-medium hover:bg-zinc-800 transition shadow-sm decorative-card-btn">View Details</button><button onclick="setQuoteProduct('${p.name}')" class="h-10 rounded-full border border-zinc-300 px-4 text-[13px] font-medium hover:bg-zinc-50 transition">Quote</button></div></div>`;
                 document.getElementById("decorative-products-grid").appendChild(el);
             });
             lucide.createIcons();
