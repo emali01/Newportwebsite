@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title data-i18n="title">About Us | MineraPro Industries - Premium Industrial Minerals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            background-color: #fafafa; 
+        }
+        [dir="rtl"] body {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+        }
+        html[lang="hi"] body {
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+        html[lang="zh"] body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+        .font-title { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+        [dir="rtl"] .font-title { font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', sans-serif; }
+        html[lang="hi"] .font-title { font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif; }
+        html[lang="zh"] .font-title { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; }
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 28px;
+            width: 2px;
+            height: calc(100% - 28px);
+            background: linear-gradient(to bottom, #e4e4e7, transparent);
+        }
+        .timeline-dot:last-child::before { display: none; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .value-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f0f0f0;
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.12);
+            border-color: #bfdbfe;
+        }
+        /* RTL support */
+        [dir="rtl"] .timeline-dot::before {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+        }
+        [dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+        }
+        [dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+        [dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
+        [dir="rtl"] .text-left { text-align: right; }
+        [dir="rtl"] .left-2\.5 { left: auto; right: 0.625rem; }
+        [dir="rtl"] .right-10 { right: auto; left: 2.5rem; }
+        [dir="rtl"] .right-6 { right: auto; left: 1.5rem; }
+        [dir="rtl"] .left-20 { left: auto; right: 5rem; }
+        [dir="rtl"] .pl-8 { padding-left: 0; padding-right: 2rem; }
+        [dir="rtl"] .pr-3 { padding-right: 0; padding-left: 0.75rem; }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-zinc-800 antialiased">
+
+    <!-- Top Bar -->
+    <div class="hidden md:block border-b border-zinc-100 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="mx-auto max-w-[1200px] px-4 py-2 flex items-center justify-between text-[12px]">
+            <div class="flex items-center gap-6">
+                <a href="index.php" class="flex items-center gap-2">
+                    <img src="/images/logo.png" alt="MineraPro" class="h-8 w-auto" onerror="this.src='https://placehold.co/100x40?text=LOGO'">
+                    <span class="font-title font-semibold tracking-tight text-[13px]">MINERAPRO INDUSTRIES</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-5 text-zinc-600">
+                    <a href="tel:+255712345678" class="flex items-center gap-1.5 hover:text-blue-700 transition-colors" data-i18n-attr="href" data-i18n-key="topbar.phone">
+                        <i data-lucide="phone" class="h-3.5 w-3.5"></i> <span data-i18n="topbar.phone">+255 712 345 678</span>
+                    </a>
+                    <a href="mailto:sales@minerapro.com" class="flex items-center gap-1.5 hover:text-blue-700 transition-colors" data-i18n-attr="href" data-i18n-key="topbar.email">
+                        <i data-lucide="mail" class="h-3.5 w-3.5"></i> <span data-i18n="topbar.email">sales@minerapro.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <i data-lucide="search" class="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-zinc-400"></i>
+                    <input type="text" data-i18n-attr="placeholder" data-i18n-key="topbar.search" placeholder="Search products..." class="h-9 w-[220px] rounded-full border border-zinc-200 bg-white pl-8 pr-3 text-[12px] outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all">
+                </div>
+                <select id="language-select" class="h-9 rounded-full border border-zinc-200 bg-white px-2.5 text-[12px] outline-none focus:border-blue-500 cursor-pointer">
+                    <option value="en">EN</option>
+                    <option value="sw">SW</option>
+                    <option value="fr">FR</option>
+                    <option value="ar">AR</option>
+                    <option value="hi">HI</option>
+                    <option value="zh">ZH</option>
+                </select>
+                <a href="https://wa.me/255712345678" target="_blank" class="inline-flex h-9 items-center gap-1.5 rounded-full bg-[#25D366] px-4 text-[12px] font-medium text-white hover:opacity-90 transition shadow-sm">
+                    <i data-lucide="message-circle" class="h-3.5 w-3.5"></i> <span data-i18n="topbar.whatsapp">WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <header id="main-header" class="sticky top-0 z-40 border-b bg-white/95 backdrop-blur-md border-zinc-100 transition-all duration-300 shadow-sm">
+        <div class="mx-auto max-w-[1200px] px-4">
+            <div class="flex h-14 items-center justify-between">
+                <a href="index.php" class="md:hidden flex items-center gap-2">
+                    <img src="/images/logo.png" alt="" class="h-8 w-auto" onerror="this.src='https://placehold.co/100x40?text=LOGO'">
+                    <span class="font-semibold text-[15px]">MINERAPRO</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-zinc-700">
+                    <a href="index.php" data-i18n="nav.home" class="hover:text-blue-700 transition-colors">Home</a>
+                    <a href="about.php" class="text-blue-700 font-semibold transition-colors" data-i18n="nav.about">About</a>
+                    <a href="index.php#products" data-i18n="nav.products" class="hover:text-blue-700 transition-colors">Products</a>
+                    <a href="index.php#industries" data-i18n="nav.industries" class="hover:text-blue-700 transition-colors">Industries</a>
+                    <a href="index.php#technical" data-i18n="nav.technical" class="hover:text-blue-700 transition-colors">Technical</a>
+                    <a href="index.php#downloads" data-i18n="nav.downloads" class="hover:text-blue-700 transition-colors">Downloads</a>
+                    <a href="index.php#projects" data-i18n="nav.projects" class="hover:text-blue-700 transition-colors">Projects</a>
+                    <a href="index.php#blog" data-i18n="nav.blog" class="hover:text-blue-700 transition-colors">Blog</a>
+                    <a href="index.php#careers" data-i18n="nav.careers" class="hover:text-blue-700 transition-colors">Careers</a>
+                    <a href="index.php#contact" data-i18n="nav.contact" class="hover:text-blue-700 transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <a href="index.php#quote" class="hidden sm:inline-flex h-10 items-center rounded-full bg-blue-600 px-5 text-[13px] font-semibold text-white hover:bg-blue-700 shadow-md transition" data-i18n="nav.requestQuote">Request Quote</a>
+                    <button id="menu-toggle" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-200 bg-white">
+                        <i data-lucide="menu" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+            <div class="px-4 py-3 space-y-3">
+                <div class="grid grid-cols-2 gap-2 text-[14px]">
+                    <a href="index.php" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.home">Home</a>
+                    <a href="about.php" class="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-blue-700 font-medium" data-i18n="nav.about">About</a>
+                    <a href="index.php#products" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.products">Products</a>
+                    <a href="index.php#industries" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.industries">Industries</a>
+                    <a href="index.php#technical" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.technical">Technical</a>
+                    <a href="index.php#downloads" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.downloads">Downloads</a>
+                    <a href="index.php#projects" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.projects">Projects</a>
+                    <a href="index.php#contact" class="rounded-lg border border-zinc-200 px-3 py-2 hover:bg-zinc-50" data-i18n="nav.contact">Contact</a>
+                </div>
+                <a href="https://wa.me/255712345678" class="flex h-10 items-center justify-center gap-2 rounded-lg bg-[#25D366] text-white font-medium shadow">
+                    <i data-lucide="message-circle" class="h-4 w-4"></i> <span data-i18n="nav.whatsappUs">WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative isolate bg-zinc-900 overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <img src="https://images.pexels.com/photos/37533379/pexels-photo-37533379.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=2000" alt="Mineral processing facility" class="h-full w-full object-cover opacity-25">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-900/70 via-zinc-900/50 to-zinc-900/90"></div>
+        <div class="absolute top-20 right-10 opacity-10">
+            <div class="h-64 w-64 rounded-full bg-blue-500 blur-3xl"></div>
+        </div>
+        <div class="absolute bottom-10 left-20 opacity-10">
+            <div class="h-48 w-48 rounded-full bg-orange-500 blur-3xl"></div>
+        </div>
+        <div class="mx-auto max-w-[1200px] px-4 py-20 lg:py-28 relative">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[12px] font-medium text-white backdrop-blur-md">
+                    <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+                    <span data-i18n="hero.location">Dar es Salaam, Tanzania</span>
+                </div>
+                <h1 class="mt-6 text-[40px] lg:text-[52px] font-bold leading-[1.08] tracking-tight text-white font-title">
+                    <span data-i18n="hero.title">Industrial Mineral Excellence</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300" data-i18n="hero.titleHighlight">Since 2007</span>
+                </h1>
+                <p class="mt-5 text-[16px] leading-relaxed text-zinc-300 max-w-xl" data-i18n="hero.description">
+                    MineraPro Industries is a leading manufacturer and exporter of dolomite, calcite, and decorative finishing materials. Our integrated mining, processing, and quality control facilities ensure consistent product performance worldwide.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#story" class="inline-flex h-12 items-center gap-2 rounded-full bg-orange-500 px-7 text-[14px] font-semibold text-white hover:bg-orange-600 shadow-lg transition">
+                        <span data-i18n="hero.ourStory">Our Story</span> <i data-lucide="arrow-down" class="h-4 w-4"></i>
+                    </a>
+                    <a href="#values" class="inline-flex h-12 items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 text-[14px] font-semibold text-white backdrop-blur-md hover:bg-white/20 transition">
+                        <span data-i18n="hero.coreValues">Core Values</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section id="story" class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="overview.label">Who We Are</span>
+                <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="overview.title">A Trusted Industrial Minerals Partner</h2>
+                <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-zinc-600">
+                    <p data-i18n="overview.p1">
+                        Founded and based in <strong>Dar es Salaam, Tanzania</strong>, MineraPro Industries is a specialized industrial minerals processing company committed to producing high-quality mineral products that fuel the growth of manufacturing and industrial sectors across Africa and beyond.
+                    </p>
+                    <p data-i18n="overview.p2">
+                        We specialize in the processing of <strong>dolomite, calcite, limestone, and other industrial minerals</strong>, delivering consistent, high-performance mineral solutions to a diverse range of industries including paint and coatings, plastics, glass manufacturing, agriculture, animal feed, construction, mining, and various other industrial applications.
+                    </p>
+                    <p data-i18n="overview.p3">
+                        Through advanced processing methods, strict quality control standards, and a commitment to operational excellence, we provide products that help our customers enhance performance, improve efficiency, and maintain product consistency.
+                    </p>
+                </div>
+                <div class="mt-7 grid grid-cols-3 gap-5">
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-[28px] font-bold text-blue-600">17+</div>
+                        <div class="mt-1 text-[12px] uppercase tracking-wide text-zinc-500 font-medium" data-i18n="overview.stat1">Years Experience</div>
+                    </div>
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-[28px] font-bold text-blue-600">120K</div>
+                        <div class="mt-1 text-[12px] uppercase tracking-wide text-zinc-500 font-medium" data-i18n="overview.stat2">MT Annual Capacity</div>
+                    </div>
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-[28px] font-bold text-blue-600">24+</div>
+                        <div class="mt-1 text-[12px] uppercase tracking-wide text-zinc-500 font-medium" data-i18n="overview.stat3">Countries Served</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.pexels.com/photos/17146231/pexels-photo-17146231.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Mineral processing" class="h-60 w-full rounded-2xl object-cover shadow-lg animate-float" style="animation-delay: 0s;">
+                <img src="https://images.pexels.com/photos/11589239/pexels-photo-11589239.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Quality control lab" class="h-60 w-full rounded-2xl object-cover shadow-lg mt-10 animate-float" style="animation-delay: 0.5s;">
+                <img src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Industrial facility" class="h-60 w-full rounded-2xl object-cover shadow-lg -mt-10 animate-float" style="animation-delay: 1s;">
+                <img src="https://images.pexels.com/photos/37533379/pexels-photo-37533379.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Minerals" class="h-60 w-full rounded-2xl object-cover shadow-lg animate-float" style="animation-delay: 1.5s;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="border-y border-zinc-100 bg-gradient-to-b from-zinc-50/80 to-white">
+        <div class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+            <div class="text-center mb-10">
+                <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="vision.label">Our Direction</span>
+                <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="vision.title">Vision & Mission</h2>
+                <p class="mt-2 text-[15px] text-zinc-500 max-w-xl mx-auto" data-i18n="vision.subtitle">Guiding principles that drive every decision we make.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50/60 to-white p-10 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-blue-100/60 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative">
+                        <h3 class="text-[24px] font-bold font-title text-blue-700" data-i18n="vision.visionTitle">Our Vision</h3>
+                        <p class="mt-4 text-[16px] leading-relaxed text-zinc-600" data-i18n="vision.visionText">
+                            To be the <strong>most trusted industrial mineral partner</strong> in Africa and the Middle East, setting the global benchmark for purity, consistency, and sustainable manufacturing by 2035.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-blue-100 px-4 py-1.5 text-[12px] font-medium text-blue-700" data-i18n="vision.visionTag1">Africa & Middle East</span>
+                            <span class="rounded-full bg-blue-100 px-4 py-1.5 text-[12px] font-medium text-blue-700" data-i18n="vision.visionTag2">Global Benchmark</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-orange-200 bg-gradient-to-br from-orange-50/60 to-white p-10 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-orange-100/60 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative">
+                        <h3 class="text-[24px] font-bold font-title text-orange-600" data-i18n="vision.missionTitle">Our Mission</h3>
+                        <p class="mt-4 text-[16px] leading-relaxed text-zinc-600" data-i18n="vision.missionText">
+                            To empower the paint, plastics, and construction industries by delivering <strong>precisely engineered mineral solutions</strong>, backed by technical expertise, uncompromising quality control, and reliable supply chain logistics.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-orange-100 px-4 py-1.5 text-[12px] font-medium text-orange-700" data-i18n="vision.missionTag1">Technical Expertise</span>
+                            <span class="rounded-full bg-orange-100 px-4 py-1.5 text-[12px] font-medium text-orange-700" data-i18n="vision.missionTag2">Supply Chain Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+        <div class="text-center mb-10">
+            <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="industries.label">Our Reach</span>
+            <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="industries.title">Industries We Serve</h2>
+            <p class="mt-2 text-[15px] text-zinc-500 max-w-xl mx-auto" data-i18n="industries.subtitle">Delivering specialized mineral solutions across diverse industrial sectors.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="paint-bucket" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.paint">Paint & Coatings</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.paintDesc">High-purity fillers & extenders</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="building-2" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.construction">Construction</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.constructionDesc">Aggregates & fillers</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="recycle" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.plastics">Plastics</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.plasticsDesc">Functional mineral additives</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="layers" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.ceramics">Ceramics</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.ceramicsDesc">Body & glaze minerals</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="wrench" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.rubber">Rubber</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.rubberDesc">Reinforcing fillers</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="sprout" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.agriculture">Agriculture</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.agricultureDesc">Soil conditioning minerals</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="beaker" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.glass">Glass</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.glassDesc">Silica & flux minerals</p>
+            </div>
+            <div class="group rounded-2xl border border-zinc-200 bg-white p-7 hover:shadow-lg hover:border-blue-200 transition-all text-center">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <i data-lucide="flask-conical" class="h-7 w-7"></i>
+                </div>
+                <h3 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="industries.chemical">Chemical</h3>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="industries.chemicalDesc">Process minerals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Specialization -->
+    <section class="border-y border-zinc-100 bg-zinc-50/80">
+        <div class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="specialization.label">Our Specialization</span>
+                    <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="specialization.title">Expert Mineral Processing</h2>
+                    <p class="mt-4 text-[15px] leading-relaxed text-zinc-600" data-i18n="specialization.description">
+                        We process a comprehensive range of industrial minerals using advanced grinding, classification, and quality control technologies. Our manufacturing facility is equipped to deliver consistent, high-purity mineral products tailored to your specifications.
+                    </p>
+                    <div class="mt-7 grid grid-cols-2 gap-4">
+                        <div class="rounded-2xl border border-zinc-200 bg-white p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center">
+                                <i data-lucide="diamond" class="h-6 w-6 text-blue-600"></i>
+                            </div>
+                            <span class="text-[15px] font-semibold" data-i18n="specialization.dolomite">Dolomite</span>
+                        </div>
+                        <div class="rounded-2xl border border-zinc-200 bg-white p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="h-12 w-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+                                <i data-lucide="gem" class="h-6 w-6 text-emerald-600"></i>
+                            </div>
+                            <span class="text-[15px] font-semibold" data-i18n="specialization.calcite">Calcite</span>
+                        </div>
+                        <div class="rounded-2xl border border-zinc-200 bg-white p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                                <i data-lucide="mountain" class="h-6 w-6 text-amber-600"></i>
+                            </div>
+                            <span class="text-[15px] font-semibold" data-i18n="specialization.limestone">Limestone</span>
+                        </div>
+                        <div class="rounded-2xl border border-zinc-200 bg-white p-5 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="h-12 w-12 rounded-xl bg-purple-100 flex items-center justify-center">
+                                <i data-lucide="rocket" class="h-6 w-6 text-purple-600"></i>
+                            </div>
+                            <span class="text-[15px] font-semibold" data-i18n="specialization.other">Other Minerals</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-zinc-200 shadow-lg">
+                    <img src="https://images.pexels.com/photos/11589239/pexels-photo-11589239.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" alt="Mineral processing" class="h-96 w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section id="values" class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+        <div class="text-center mb-10">
+            <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="values.label">What We Stand For</span>
+            <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="values.title">Our Core Values</h2>
+            <p class="mt-2 text-[15px] text-zinc-500 max-w-xl mx-auto" data-i18n="values.subtitle">Eight guiding principles that define our culture, drive our decisions, and shape our relationships.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600"><span class="text-[18px] font-bold">1</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v1_title">Quality Excellence</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v1_desc">We are committed to maintaining the highest standards in mineral processing, ensuring consistency, reliability, and customer satisfaction in every product we deliver.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><span class="text-[18px] font-bold">2</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v2_title">Integrity</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v2_desc">We conduct our business with honesty, professionalism, transparency, and accountability in all our relationships.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600"><span class="text-[18px] font-bold">3</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v3_title">Customer Focus</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v3_desc">We succeed when our customers succeed. We strive to understand their needs and provide solutions that create lasting value.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600"><span class="text-[18px] font-bold">4</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v4_title">Reliability</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v4_desc">We honour our commitments through dependable supply, consistent product quality, and responsive service.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100 text-cyan-600"><span class="text-[18px] font-bold">5</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v5_title">Innovation</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v5_desc">We continuously improve our processes, technologies, and products to meet the evolving demands of industry.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red-100 text-red-600"><span class="text-[18px] font-bold">6</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v6_title">Safety</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v6_desc">We prioritize the health and safety of our employees, contractors, visitors, and communities in every aspect of our operations.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><span class="text-[18px] font-bold">7</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v7_title">Operational Excellence</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v7_desc">We pursue efficiency, discipline, and continuous improvement to achieve superior performance across our business.</p>
+            </div>
+            <div class="value-card rounded-2xl bg-white p-7">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600"><span class="text-[18px] font-bold">8</span></div>
+                <h3 class="mt-5 text-[16px] font-semibold text-zinc-900 font-title" data-i18n="values.v8_title">Teamwork</h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-zinc-600" data-i18n="values.v8_desc">We foster collaboration, respect, and shared responsibility to achieve common goals and drive sustainable success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Commitment -->
+    <section class="border-y border-zinc-100 bg-zinc-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-96 w-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 h-64 w-64 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-orange-400" data-i18n="quality.label">Our Commitment</span>
+                    <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title" data-i18n="quality.title">Quality & Operational Excellence</h2>
+                    <p class="mt-4 text-[15px] leading-relaxed text-zinc-300" data-i18n="quality.description">Our commitment to quality is embedded in every stage of our operation—from raw material selection through processing to final delivery. We employ rigorous quality control protocols to ensure every shipment meets or exceeds customer expectations.</p>
+                    <div class="mt-7 grid grid-cols-2 gap-5">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <div><h4 class="text-[14px] font-semibold text-white" data-i18n="quality.q1_title">Advanced Processing</h4><p class="text-[13px] text-zinc-400" data-i18n="quality.q1_desc">Modern grinding & classification technology</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <div><h4 class="text-[14px] font-semibold text-white" data-i18n="quality.q2_title">Strict QC Standards</h4><p class="text-[13px] text-zinc-400" data-i18n="quality.q2_desc">Laboratory testing & batch analysis</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <div><h4 class="text-[14px] font-semibold text-white" data-i18n="quality.q3_title">Consistent Supply</h4><p class="text-[13px] text-zinc-400" data-i18n="quality.q3_desc">Reliable delivery & inventory management</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0"></i>
+                            <div><h4 class="text-[14px] font-semibold text-white" data-i18n="quality.q4_title">Customer Support</h4><p class="text-[13px] text-zinc-400" data-i18n="quality.q4_desc">Technical guidance & responsive service</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8">
+                    <h3 class="text-[18px] font-semibold text-white" data-i18n="quality.promiseTitle">Our Quality Promise</h3>
+                    <div class="mt-5 space-y-4 text-[14px] text-zinc-300">
+                        <div class="flex items-start gap-4"><i data-lucide="shield-check" class="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0"></i><p data-i18n="quality.promise1">Raw material inspection & quarry sampling before processing</p></div>
+                        <div class="flex items-start gap-4"><i data-lucide="shield-check" class="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0"></i><p data-i18n="quality.promise2">In-process quality monitoring throughout production</p></div>
+                        <div class="flex items-start gap-4"><i data-lucide="shield-check" class="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0"></i><p data-i18n="quality.promise3">Finished product testing for chemical & physical properties</p></div>
+                        <div class="flex items-start gap-4"><i data-lucide="shield-check" class="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0"></i><p data-i18n="quality.promise4">Certificates of Analysis (COA) provided with every shipment</p></div>
+                        <div class="flex items-start gap-4"><i data-lucide="shield-check" class="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0"></i><p data-i18n="quality.promise5">Continuous improvement through customer feedback & R&D</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="mx-auto max-w-[1200px] px-4 py-14 lg:py-16">
+        <div class="text-center mb-10">
+            <span class="text-[13px] font-semibold uppercase tracking-wider text-blue-600" data-i18n="timeline.label">Our Journey</span>
+            <h2 class="mt-2 text-[30px] font-bold tracking-tight font-title text-zinc-900" data-i18n="timeline.title">Building Industrial Excellence</h2>
+            <p class="mt-2 text-[15px] text-zinc-500 max-w-xl mx-auto" data-i18n="timeline.subtitle">A timeline of our commitment to quality, growth, and industrial development.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div class="timeline-dot relative text-center">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white text-[14px] font-bold shadow-lg shadow-blue-200">1</div>
+                <h4 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="timeline.t1_title">Founded 2007</h4>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="timeline.t1_desc">Established in Dar es Salaam with a vision to serve regional industries</p>
+            </div>
+            <div class="timeline-dot relative text-center">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white text-[14px] font-bold shadow-lg shadow-blue-200">2</div>
+                <h4 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="timeline.t2_title">ISO Certification</h4>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="timeline.t2_desc">Achieved ISO 9001:2015 certification for quality management</p>
+            </div>
+            <div class="timeline-dot relative text-center">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white text-[14px] font-bold shadow-lg shadow-blue-200">3</div>
+                <h4 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="timeline.t3_title">Export Growth</h4>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="timeline.t3_desc">Expanded to serve 24+ countries across Africa, Middle East & Asia</p>
+            </div>
+            <div class="timeline-dot relative text-center">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white text-[14px] font-bold shadow-lg shadow-emerald-200">4</div>
+                <h4 class="mt-4 text-[15px] font-semibold text-zinc-900" data-i18n="timeline.t4_title">Future Vision 2035</h4>
+                <p class="mt-2 text-[13px] text-zinc-500" data-i18n="timeline.t4_desc">Scaling to become global benchmark for industrial minerals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="border-t border-zinc-100 bg-gradient-to-b from-zinc-50/80 to-white">
+        <div class="mx-auto max-w-[1200px] px-4 py-14 text-center">
+            <h2 class="text-[28px] font-bold tracking-tight font-title text-zinc-900" data-i18n="cta.title">Partner with MineraPro</h2>
+            <p class="mt-3 text-[15px] text-zinc-600 max-w-lg mx-auto" data-i18n="cta.subtitle">Let us provide the consistent, high-quality mineral products your business needs to thrive.</p>
+            <div class="mt-7 flex flex-wrap justify-center gap-4">
+                <a href="index.php#quote" class="inline-flex h-12 items-center gap-2 rounded-full bg-blue-600 px-8 text-[14px] font-semibold text-white hover:bg-blue-700 shadow-lg shadow-blue-200 transition">
+                    <span data-i18n="cta.requestQuote">Request a Quote</span> <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                </a>
+                <a href="index.php#contact" class="inline-flex h-12 items-center gap-2 rounded-full border border-zinc-300 bg-white px-8 text-[14px] font-semibold text-zinc-700 hover:bg-zinc-50 shadow-sm transition">
+                    <span data-i18n="cta.contactUs">Contact Us</span> <i data-lucide="phone" class="h-4 w-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-zinc-300">
+        <div class="mx-auto max-w-[1200px] px-4 py-12">
+            <div class="grid md:grid-cols-5 gap-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <img src="/images/logo.png" alt="" class="h-9 w-auto brightness-0 invert" onerror="this.src='https://placehold.co/100x40?text=LOGO'">
+                        <span class="font-semibold text-white text-lg">MINERAPRO INDUSTRIES</span>
+                    </div>
+                    <p class="mt-4 text-[14px] leading-relaxed text-zinc-400 max-w-sm" data-i18n="footer.tagline">Manufacturer and exporter of premium dolomite, calcite and decorative finishes. ISO 9001:2015 certified. Serving Africa, Middle East & Asia.</p>
+                    <div class="mt-5 flex gap-3">
+                        <span class="rounded-lg border border-white/15 px-3 py-1.5 text-[12px] font-medium">ISO</span>
+                        <span class="rounded-lg border border-white/15 px-3 py-1.5 text-[12px] font-medium">SGS</span>
+                        <span class="rounded-lg border border-white/15 px-3 py-1.5 text-[12px] font-medium">CE</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-[14px] font-semibold text-white" data-i18n="footer.products">Products</h4>
+                    <ul class="mt-4 space-y-3 text-[14px]">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product1">Dolomite Powder</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product2">Dolomite Granules</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product3">Calcite Powder</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product4">Wall Putty</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product5">Grafiato</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.product6">Stone Plaster</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[14px] font-semibold text-white" data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="mt-4 space-y-3 text-[14px]">
+                        <li><a href="about.php" class="hover:text-white transition" data-i18n="footer.aboutUs">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.industriesLink">Industries</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.technicalData">Technical Data</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.downloadsLink">Downloads</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.projectsLink">Projects</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.careersLink">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[14px] font-semibold text-white" data-i18n="footer.support">Support</h4>
+                    <ul class="mt-4 space-y-3 text-[14px]">
+                        <li><a href="index.php#contact" class="hover:text-white transition" data-i18n="footer.contactLink">Contact</a></li>
+                        <li><a href="index.php#quote" class="hover:text-white transition" data-i18n="footer.requestQuoteLink">Request Quote</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.distributorPortal">Distributor Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.customerLogin">Customer Login</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer.terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 flex flex-col md:flex-row items-center justify-between gap-5 border-t border-white/10 pt-8 text-[13px] text-zinc-500">
+                <div data-i18n="footer.copyright">© 2026 MineraPro Industries Ltd. All rights reserved.</div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-zinc-300 transition">LinkedIn</a>
+                    <a href="#" class="hover:text-zinc-300 transition">Facebook</a>
+                    <a href="#" class="hover:text-zinc-300 transition">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/255712345678" target="_blank" class="fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-xl hover:scale-105 transition-all duration-300">
+        <i data-lucide="message-circle" class="h-7 w-7 text-white"></i>
+    </a>
+
+    <script>
+        // Language handling
+        const languageSelect = document.getElementById('language-select');
+        let currentLang = localStorage.getItem('minerapro_lang') || 'en';
+        let translations = {};
+        
+        // Language map for HTML lang attribute
+        const htmlLangMap = {
+            'en': 'en', 'sw': 'sw', 'fr': 'fr', 'ar': 'ar', 'hi': 'hi', 'zh': 'zh'
+        };
+        
+        // Set initial language
+        languageSelect.value = currentLang;
+        
+        async function loadLanguage(lang) {
+            try {
+                const response = await fetch(`lang/${lang}.json`);
+                if (!response.ok) throw new Error('Language file not found');
+                translations = await response.json();
+                applyTranslations();
+                updateDocumentDirection(lang);
+                localStorage.setItem('minerapro_lang', lang);
+                currentLang = lang;
+                
+                // Update CSS for RTL
+                if (lang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                }
+                
+                // Update HTML lang attribute
+                document.documentElement.setAttribute('lang', htmlLangMap[lang] || lang);
+                
+                // Re-initialize lucide icons after DOM changes
+                setTimeout(() => lucide.createIcons(), 100);
+            } catch (error) {
+                console.error('Error loading language:', error);
+                // Fallback to English if language file fails
+                if (lang !== 'en') {
+                    loadLanguage('en');
+                }
+            }
+        }
+        
+        function applyTranslations() {
+            // Translate elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const translation = getNestedTranslation(key);
+                if (translation && typeof translation === 'string') {
+                    el.textContent = translation;
+                }
+            });
+            
+            // Translate placeholder attributes
+            document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+                const attr = el.getAttribute('data-i18n-attr');
+                const key = el.getAttribute('data-i18n-key');
+                const translation = getNestedTranslation(key);
+                if (translation && typeof translation === 'string') {
+                    el.setAttribute(attr, translation);
+                }
+            });
+        }
+        
+        function getNestedTranslation(key) {
+            return key.split('.').reduce((obj, k) => obj && obj[k], translations);
+        }
+        
+        function updateDocumentDirection(lang) {
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        }
+        
+        // Language selector event
+        languageSelect.addEventListener('change', function() {
+            const selectedLang = this.value;
+            loadLanguage(selectedLang);
+        });
+        
+        // Load initial language
+        loadLanguage(currentLang);
+        
+        // Header and mobile menu logic
+        lucide.createIcons();
+        
+        const header = document.getElementById("main-header");
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                header.classList.add("shadow-md");
+                header.classList.remove("border-zinc-100");
+            } else {
+                header.classList.remove("shadow-md");
+                header.classList.add("border-zinc-100");
+            }
+        });
+        
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            const isHidden = mobileMenu.classList.contains("hidden");
+            menuToggle.innerHTML = isHidden 
+                ? '<i data-lucide="menu" class="h-5 w-5"></i>' 
+                : '<i data-lucide="x" class="h-5 w-5"></i>';
+            lucide.createIcons();
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add("hidden");
+                menuToggle.innerHTML = '<i data-lucide="menu" class="h-5 w-5"></i>';
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
